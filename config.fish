@@ -1,0 +1,44 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    alias token 'cat ~/.config/token | xclip -selection cilpboard'
+    alias cls 'clear'
+    alias sik 'exit'
+    alias nixins 'sudo nvim /etc/nixos/packages.nix'
+    alias by 'poweroff'
+    fish_vi_key_bindings
+    alias ls 'eza --icons'
+    alias l 'ls -al'
+    alias .. 'cd ..'
+    alias ... 'cd ../..'
+    alias .... 'cd ../../..'
+    alias burp 'java -jar  ~/Downloads/Burp.Suite.Professional.2025.12.5/BurpLoaderKeygen117.jar'
+    alias fastfetch 'fastfetch --logo ~/.config/fastfetch/lain.txt' 
+    alias salam 'espeak-ng -v en+f5  "salam salar , kefin"'
+    alias kefin  'espeak-ng -v en+f5  "senin kefin"'
+    alias salam-ver  "espeak-ng -v en+f5 'kefin selin jon' "
+    alias hg "history | grep $1"
+    alias fh 'find . -name '   
+    alias .... 'cd ../..'
+    alias gs 'git status'
+    # Github abbr
+    #
+    abbr gs 'git status'
+    abbr ga 'git add .'
+    abbr gp 'git push'
+    abbr gpl 'git pull'
+    abbr gc 'git commit -m ""'
+    # Tmux
+    # # Start tmux automatically if not already inside it
+if status is-interactive
+    if not set -q TMUX
+        exec tmux
+    end
+
+
+
+    # zoxide
+    zoxide init fish | source
+
+
+end
+end

@@ -1,0 +1,93 @@
+{ pkgs, ... }:
+
+
+
+{
+  environment.systemPackages = with pkgs; [
+	#vimHugeX
+	vim-full
+	wget
+	btop
+	curl
+	kitty
+	python3
+	gcc
+	bat
+	neofetch
+	plank
+	fastfetch
+	lm_sensors
+	xarchiver
+	zip
+	unzip
+	unrar
+	ranger
+	dmenu
+	htop
+	zsh 
+	fish
+	nodejs
+	tmux
+	tor
+	go
+	jdk
+	rar
+	torsocks
+	wine
+	telegram-desktop
+	neovim
+	fzf
+	eza
+        lm_sensors
+	rustc
+        cargo
+        rust-analyzer
+        clippy
+        rustfmt
+	subfinder
+	httpx
+	nuclei
+	jq
+	alacritty
+	yazi 
+	zoxide
+	xclip
+        obsidian
+        mpg123
+        ddcutil
+        ddcui
+        ddccontrol
+        gtk2
+        glib
+        gdk-pixbuf
+        webkitgtk
+        chromium
+        vlc
+        v2ray
+        v2raya
+        connect
+        corkscrew
+        tree
+        proxychains
+        espeak
+        discord
+        chromium
+        cacert
+        nodejs
+        gtk3
+        nss
+        git
+  ];
+fonts.packages = with pkgs; [
+  noto-fonts
+  noto-fonts-cjk-sans
+  noto-fonts-color-emoji
+  liberation_ttf
+  fira-code
+  fira-code-symbols
+  mplus-outline-fonts.githubRelease
+  dina-font
+  proggyfonts
+];
+
+}
