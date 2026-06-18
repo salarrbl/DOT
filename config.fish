@@ -20,6 +20,7 @@ if status is-interactive
     alias fh 'find . -name '   
     alias .... 'cd ../..'
     alias gs 'git status'
+    alias serverpass 'cat ~/.config/server | xclip -selection clipboard'
     # Github abbr
     #
     abbr gs 'git status'
@@ -27,6 +28,12 @@ if status is-interactive
     abbr gp 'git push'
     abbr gpl 'git pull'
     abbr gc 'git commit -m ""'
+    
+
+
+    set  SC '/home/qarqa/Documents/Docs/Second-Brain'
+    #source <(/home/qarqa/go/bin/watchdogs completion fish)
+    /home/qarqa/go/bin/watchdogs completion fish | source
     # Tmux
     # # Start tmux automatically if not already inside it
 if status is-interactive

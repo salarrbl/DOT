@@ -1,21 +1,17 @@
 {
-  description = "My rebel NixOS system";
+  description = "My NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";  # or your preferred channel
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-
+  outputs = { self, nixpkgs, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
+        # add other modules here
       ];
-
     };
-
   };
 }

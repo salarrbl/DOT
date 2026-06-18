@@ -13,7 +13,6 @@
 	python3
 	gcc
 	bat
-	neofetch
 	plank
 	fastfetch
 	lm_sensors
@@ -29,13 +28,11 @@
 	nodejs
 	tmux
 	tor
-	go
 	jdk
 	rar
 	torsocks
 	wine
 	telegram-desktop
-	neovim
 	fzf
 	eza
         lm_sensors
@@ -60,7 +57,6 @@
         gtk2
         glib
         gdk-pixbuf
-        webkitgtk
         chromium
         vlc
         v2ray
@@ -76,7 +72,23 @@
         nodejs
         gtk3
         nss
+        neovim
         git
+        go
+	burpsuite
+        cava
+        termius
+        obs-studio
+	xmind
+        rofi
+        mousepad
+        xfce4-terminal
+        spotify-player
+        google-chrome
+        whois
+        ncdu
+        openssl
+
   ];
 fonts.packages = with pkgs; [
   noto-fonts
