@@ -87,8 +87,21 @@
         google-chrome
         whois
         ncdu
+        ffmpeg
+        gephgui-wry
+        ntfs3g
+        opencode
+        lazyssh
+        bind
+        docker
         openssl
-
+        bind
+        catppuccin-sddm
+        sddm-astronaut
+        exiftool
+        mongosh
+        mongodb-tools
+        mongodb-compass
   ];
 fonts.packages = with pkgs; [
   noto-fonts

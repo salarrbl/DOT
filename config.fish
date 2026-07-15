@@ -1,4 +1,6 @@
 if status is-interactive
+
+    set -e SSH_ASKPASS
     # Commands to run in interactive sessions can go here
     alias token 'cat ~/.config/token | xclip -selection cilpboard'
     alias cls 'clear'
@@ -21,6 +23,7 @@ if status is-interactive
     alias .... 'cd ../..'
     alias gs 'git status'
     alias serverpass 'cat ~/.config/server | xclip -selection clipboard'
+    alias cop ' xclip -selection clipboard'
     # Github abbr
     #
     abbr gs 'git status'
@@ -34,6 +37,8 @@ if status is-interactive
     set  SC '/home/qarqa/Documents/Docs/Second-Brain'
     #source <(/home/qarqa/go/bin/watchdogs completion fish)
     /home/qarqa/go/bin/watchdogs completion fish | source
+    set -gx PATH /home/qarqa/.npm-global/bin $PATH
+    set -gx PATH $HOME/.local/bin $PATH
     # Tmux
     # # Start tmux automatically if not already inside it
 if status is-interactive
@@ -49,3 +54,6 @@ if status is-interactive
 
 end
 end
+
+# opencode
+fish_add_path /home/qarqa/.opencode/bin
