@@ -37,6 +37,13 @@ services.mongodb= {
   package = pkgs.mongodb-ce;
 };
 
+
+
+# Docker
+  # Enable the Docker service
+virtualisation.docker.enable = true;
+
+services.privoxy.enable = true;
 #nix-ld
 programs.nix-ld.enable = true;
   # Enable the X11 windowing system.
@@ -83,7 +90,7 @@ services.desktopManager.plasma6.enable = true;
   users.users.qarqa = {
     isNormalUser = true;
     description = "rebel";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       kdePackages.kate
     ];

@@ -102,6 +102,8 @@
         mongosh
         mongodb-tools
         mongodb-compass
+        playwright
+        uv
   ];
 fonts.packages = with pkgs; [
   noto-fonts

@@ -1,6 +1,0 @@
-- How commands should be presented
-- How reports should be formatted
-- How suggestions should be written
-- Response length
-- Confidence levels
-- Markdown conventions

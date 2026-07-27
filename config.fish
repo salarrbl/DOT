@@ -28,13 +28,14 @@ if status is-interactive
     #
     abbr gs 'git status'
     abbr ga 'git add .'
-    abbr gp 'git push'
+    abbr gp 'xclip -selection clipboard ~/.config/token ; git push'
     abbr gpl 'git pull'
     abbr gc 'git commit -m ""'
     
 
 
     set  SC '/home/qarqa/Documents/Docs/Second-Brain'
+    set bet '/home/qarqa/rebel/bett-usernames'
     #source <(/home/qarqa/go/bin/watchdogs completion fish)
     /home/qarqa/go/bin/watchdogs completion fish | source
     set -gx PATH /home/qarqa/.npm-global/bin $PATH
@@ -57,3 +58,7 @@ end
 
 # opencode
 fish_add_path /home/qarqa/.opencode/bin
+
+# Qwen Code PATH block begin
+set -gx PATH '/home/qarqa/.local/bin' $PATH
+# Qwen Code PATH block end
