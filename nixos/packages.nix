@@ -49,7 +49,6 @@
 	yazi 
 	zoxide
 	xclip
-        obsidian
         mpg123
         ddcutil
         ddcui
@@ -66,7 +65,7 @@
         tree
         proxychains
         espeak
-        discord
+        # discord
         chromium
         cacert
         nodejs
@@ -75,7 +74,6 @@
         neovim
         git
         go
-	burpsuite
         cava
         termius
         obs-studio
@@ -88,7 +86,6 @@
         whois
         ncdu
         ffmpeg
-        gephgui-wry
         ntfs3g
         opencode
         lazyssh
@@ -99,11 +96,27 @@
         catppuccin-sddm
         sddm-astronaut
         exiftool
-        mongosh
-        mongodb-tools
-        mongodb-compass
         playwright
         uv
+        agent-browser
+        sshpass
+	obsidian
+	git-lfs
+	discord
+	chafa
+	mongosh
+	mongodb-tools
+	mongodb-ce
+	duff
+	iw
+	aircrack-ng
+	ayugram-desktop
+	kotatogram-desktop
+	geph
+	gephgui-wry
+	gnumake
+
+
   ];
 fonts.packages = with pkgs; [
   noto-fonts

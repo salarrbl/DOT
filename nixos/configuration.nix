@@ -9,6 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
+       hermes-agent.homeManagerModules.default
+  
     ];
 
   # Bootloader.
@@ -33,8 +35,8 @@
 
 # monogo db
 services.mongodb= {
-  enable = true;
-  package = pkgs.mongodb-ce;
+ enable = true;
+ package = pkgs.mongodb-ce;
 };
 
 
@@ -147,29 +149,43 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 # ... rest of your configuration ...
 
-services.xserver.desktopManager.xfce.enable = true;
-services.displayManager.defaultSession = "xfce";
+#services.xserver.desktopManager.xfce.enable = true;
+#services.displayManager.defaultSession = "xfce";
 
 # Niri
 
-programs.niri = {
-  enable = true;
-  package = pkgs.niri;
-};
+#programs.niri = {
+#  enable = true;
+#  package = pkgs.niri;
+#};
 
-services.displayManager.sessionPackages = [
-  pkgs.niri
-];
+#services.displayManager.sessionPackages = [
+#  pkgs.niri
+#];
 networking.nameservers=["208.67.222.222" "208.67.220.220"];
 
+# polkit
+security.polkit = {
+  enable = true;
+  enablePkexecWrapper = true;
+};
 
 # ollama
 services.ollama = {
   enable = true;
 };
-# linkkdshf
+# Hermes Agent
 
-# Defualt shell
+  programs.hermes-agent = {
+    enable = true;
+    desktop.enable = true;   # gives you the desktop app + launcher entry
+  };
+  services.hermes-agent = {
+    enable = true;
+    gateway.enable = true;
+    settings.model.default = "anthropic/claude-sonnet-4";
+    environmentFiles = [ config.sops.secrets."hermes-env".path ]; # or a plain file with your key
+  };# Defualt shell
 # Some programs need SUID wrappers, can be configured further or are
 
   # started in user sessions.
