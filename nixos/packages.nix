@@ -25,7 +25,6 @@
 	htop
 	zsh 
 	fish
-	nodejs
 	tmux
 	tor
 	jdk
@@ -115,8 +114,12 @@
 	geph
 	gephgui-wry
 	gnumake
-
-
+	nodejs
+	electron
+	pkg-config
+        super-productivity
+  	sqlite
+	vscode
   ];
 fonts.packages = with pkgs; [
   noto-fonts
@@ -130,4 +133,63 @@ fonts.packages = with pkgs; [
   proggyfonts
 ];
 
+programs.nix-ld.libraries = with pkgs; [
+   gtk4
+  libxml2
+  gdk-pixbuf
+  freetype
+  fontconfig
+  harfbuzz
+  libpng
+  libjpeg_turbo
+  libwebp
+  # GLib / GTK
+  glib
+  gobject-introspection
+  gtk3
+  atk
+  at-spi2-atk
+  cairo
+  pango
+
+  # Chromium / Electron
+  nss
+  nspr
+  dbus
+  cups
+  expat
+
+  # X11
+   libX11
+   libXcomposite
+   libXdamage
+   libXext
+   libXfixes
+   libXrandr
+   libxcb
+   libxkbcommon
+   libXinerama
+   libXi
+   libXcomposite
+   libXdamage
+   libXcursor
+   zlib
+   pkg-config
+
+  # Graphics
+  libgbm
+  mesa
+  mesa.drivers
+  libglvnd
+
+  # System / hardware
+  systemd
+  alsa-lib
+  gtk3
+  webkitgtk_4_1
+  gobject-introspection
+  libsoup_3
+
+
+];
 }

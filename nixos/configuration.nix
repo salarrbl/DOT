@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
-       hermes-agent.homeManagerModules.default
   
     ];
 
@@ -174,18 +173,19 @@ security.polkit = {
 services.ollama = {
   enable = true;
 };
-# Hermes Agent
 
-  programs.hermes-agent = {
-    enable = true;
-    desktop.enable = true;   # gives you the desktop app + launcher entry
-  };
-  services.hermes-agent = {
-    enable = true;
-    gateway.enable = true;
-    settings.model.default = "anthropic/claude-sonnet-4";
-    environmentFiles = [ config.sops.secrets."hermes-env".path ]; # or a plain file with your key
-  };# Defualt shell
+
+
+
+#  fingerprint !
+services.fprintd.enable = true;
+
+  # libfprint استاندارد nixpkgs معمولاً درایور elanspi رو
+  # فعال داره چون از اواخر ۲۰۲۴ merge شده، اما مطمئن شو نسخه‌ی جدیده:
+  services.fprintd.package = pkgs.fprintd;
+
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
 # Some programs need SUID wrappers, can be configured further or are
 
   # started in user sessions.
