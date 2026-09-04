@@ -1,0 +1,44 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icon128.plasmo.3c1ed2d2.png",
+         "16": "icon16.plasmo.6c567d50.png",
+         "32": "icon32.plasmo.76b92899.png",
+         "48": "icon48.plasmo.aced7582.png",
+         "64": "icon64.plasmo.8bb5e6e0.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "author": "CRMChat",
+   "background": {
+      "service_worker": "static/background/index.js"
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "css": [  ],
+      "js": [ "main.7ee886d8.js" ],
+      "matches": [ "https://web.telegram.org/k/*", "https://web.telegram.org/a/*" ]
+   }, {
+      "css": [  ],
+      "js": [ "scraping-overlay.38087d3f.js" ],
+      "matches": [ "https://web.telegram.org/k/*", "https://web.telegram.org/a/*" ]
+   } ],
+   "description": "Scrape full list of members in private and public groups you're a part of. Use it for LeadGen on Telegram",
+   "icons": {
+      "128": "icon128.plasmo.3c1ed2d2.png",
+      "16": "icon16.plasmo.6c567d50.png",
+      "32": "icon32.plasmo.76b92899.png",
+      "48": "icon48.plasmo.aced7582.png",
+      "64": "icon64.plasmo.8bb5e6e0.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAofZBgByQ6Pv833jRdfbOil8poJaiQYgyuxNSeFKuseWPpfFwmkArCe/w3Xbu3C7c/s7cND4J2MauqrVzALxMVYUFSxjARhAIBjK/3r0kgJWd65EamtmLYlACvFgR4zfFpxeLBc/XgFwyI/4iCu8Xs4TWU/qUHcSJCD5dLJPAK8d3NewFSglG9FgNnEz7HvdyG3qXozjzgk11RXUEfMQUfI9fix3r1B29fRezHrsgBAmo/ptz1p6wVkzVpJ9g4aoO0XkpxMHHV0KNF/GTE7e/1/XW12PqDpHHhAE3AgIRO2vYkbHIpX7b/RGHjbemMKFtuKWIb6KCVc1B4wVYpjM3twIDAQAB",
+   "manifest_version": 3,
+   "name": "Telegram Group Parser by CRMChat",
+   "permissions": [ "storage", "activeTab", "downloads" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.6",
+   "web_accessible_resources": [ {
+      "matches": [ "https://web.telegram.org/*", "https://web.telegram.org/*" ],
+      "resources": [ "scraping-overlay.15f849a9.css", "Geist-Variable.0343d1eb.woff2", "GeistMono-Variable.20ae2caf.woff2" ]
+   } ]
+}
