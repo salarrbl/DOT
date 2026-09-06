@@ -1025,5 +1025,3 @@ func cmdScan(args []string) {
 	}
 }
 
-// silence unused net import used conceptually for ip parse in helpers
-var _ = net.IP{}
