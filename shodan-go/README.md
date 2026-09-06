@@ -1,8 +1,19 @@
 # shodan-go
 
-Go rewrite of the official [shodan-python](https://github.com/achillean/shodan-python) library.
+Go **copy** of the official [shodan-python](https://github.com/achillean/shodan-python) library (v1.31.0).
 
-Shodan is a search engine for Internet-connected devices. This package wraps the REST, Streaming, Exploits, Trends, and Threatnet APIs.
+Package layout mirrors Python:
+
+| Python | Go |
+| --- | --- |
+| `shodan.client.Shodan` | `shodan.Client` |
+| `shodan.exception.APIError` | `shodan.APIError` |
+| `shodan.helpers` | `shodan` helpers |
+| `shodan.stream.Stream` | `shodan.Stream` |
+| `shodan.threatnet.Threatnet` | `shodan.Threatnet` |
+| `shodan.__main__` + `shodan.cli.*` | `cmd/shodan` + `cli/` |
+
+Shodan is a search engine for Internet-connected devices. This package wraps the REST, Streaming, Exploits, Trends, and Threatnet APIs, plus the CLI commands from the Python tool.
 
 ## Install
 
@@ -53,14 +64,16 @@ Override the REST base URL with `SHODAN_API_URL` (same as the Python client).
 
 ## CLI
 
+Same command set as `shodan` in Python (`init`, `info`, `count`, `search`, `download`, `host`, `parse`, `convert`, `domain`, `myip`, `stats`, `stream`, `trends`, `honeyscore`, `alert`, `data`, `org`, `scan`, `version`).
+
 ```bash
-export SHODAN_API_KEY=...
+go run ./cmd/shodan init YOUR_API_KEY
 go run ./cmd/shodan host 8.8.8.8
 go run ./cmd/shodan search apache
 go run ./cmd/shodan count tag:ics
-go run ./cmd/shodan info
-go run ./cmd/shodan myip
 ```
+
+API key is stored in `~/.shodan/api_key` or `~/.config/shodan/api_key`, matching Python.
 
 ## Coverage vs shodan-python
 
