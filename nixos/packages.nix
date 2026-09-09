@@ -1,6 +1,25 @@
 { pkgs, ... }:
 
-
+let
+  python-pkgs =
+    ps: with ps; [
+      pandas
+      aiohttp
+      impacket
+      pycryptodomex
+      ratelimit
+      termcolor
+      fastapi
+      psutil
+      beautifulsoup4
+      colorama
+      python-dotenv
+      requests
+      unidecode
+      prettytable
+      setuptools
+    ];
+in
 
 {
   environment.systemPackages = with pkgs; [
@@ -119,7 +138,16 @@
 	pkg-config
         super-productivity
   	sqlite
-	vscode
+        proton-vpn
+	rofi
+        remmina
+	metasploit
+	pipx
+	python3Packages.pip
+	(lib.hiPrio (python3.withPackages python-pkgs))
+	thc-hydra
+	rdesktop
+	netexec
   ];
 fonts.packages = with pkgs; [
   noto-fonts

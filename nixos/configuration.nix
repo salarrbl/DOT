@@ -175,6 +175,21 @@ services.ollama = {
 };
 
 
+# my apps
+ systemd.services.myapp = {
+    description = "My Go Application";
+    wantedBy = [ "multi-user.target" ];
+
+    serviceConfig = {
+      ExecStart = "/home/qarqa/rebel/bountyboard/bountyboard";
+      Restart = "always";
+      RestartSec = 5;
+
+      # Optional
+      User = "qarqa";
+      WorkingDirectory = "/home/qarqa";
+    };
+  };
 
 
 #  fingerprint !
