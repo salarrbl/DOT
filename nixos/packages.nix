@@ -27,9 +27,11 @@ in
 	vim-full
 	wget
 	btop
+	freerdp
 	curl
 	kitty
 	python3
+	sl
 	gcc
 	bat
 	plank
@@ -38,6 +40,7 @@ in
 	xarchiver
 	zip
 	unzip
+	freerdp
 	unrar
 	ranger
 	dmenu
@@ -140,14 +143,34 @@ in
   	sqlite
         proton-vpn
 	rofi
-        remmina
 	metasploit
 	pipx
 	python3Packages.pip
 	(lib.hiPrio (python3.withPackages python-pkgs))
 	thc-hydra
 	rdesktop
-	netexec
+	openvpn
+	masscan
+	radare2
+	ghidra
+	colima
+	incus
+	wireguard-tools
+	gnupg
+	xray
+	dalfox
+	caido-desktop
+	caido-cli
+	sing-box
+	waybar
+  	alacritty
+  	fuzzel
+  	swaylock
+  	orca
+	playerctl
+	brightnessctl
+	swaybg
+	pavucontrol
   ];
 fonts.packages = with pkgs; [
   noto-fonts
@@ -159,6 +182,7 @@ fonts.packages = with pkgs; [
   mplus-outline-fonts.githubRelease
   dina-font
   proggyfonts
+  nerd-fonts.jetbrains-mono
 ];
 
 programs.nix-ld.libraries = with pkgs; [

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -24,7 +24,8 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  #networking.networkmanager.enable = true;
+  networking.wireless.iwd.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Tehran";
@@ -91,7 +92,7 @@ services.desktopManager.plasma6.enable = true;
   users.users.qarqa = {
     isNormalUser = true;
     description = "rebel";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "vboxusers" ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -153,15 +154,15 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 # Niri
 
-#programs.niri = {
-#  enable = true;
-#  package = pkgs.niri;
-#};
-
-#services.displayManager.sessionPackages = [
-#  pkgs.niri
-#];
-networking.nameservers=["208.67.222.222" "208.67.220.220"];
+programs.niri = {
+  enable = true;
+  package = pkgs.niri;
+};
+services.displayManager.defaultSession = lib.mkForce "niri";
+services.displayManager.sessionPackages = [
+  pkgs.niri
+];
+networking.nameservers=["193.186.32.32"];
 
 # polkit
 security.polkit = {
@@ -194,6 +195,17 @@ services.ollama = {
 
 #  fingerprint !
 services.fprintd.enable = true;
+
+#steam
+programs.steam.enable = true;
+
+
+# Virutalbox
+virtualisation.virtualbox.host.enable = true;
+
+# Windows VM
+virtualisation.libvirtd.enable = true;
+programs.virt-manager.enable = true;
 
   # libfprint استاندارد nixpkgs معمولاً درایور elanspi رو
   # فعال داره چون از اواخر ۲۰۲۴ merge شده، اما مطمئن شو نسخه‌ی جدیده:
